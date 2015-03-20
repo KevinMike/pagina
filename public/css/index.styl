@@ -1,0 +1,164 @@
+azul = #065580
+gris_claro = #F2F2F2
+blanco = rgb(254,254,254) 
+celeste = rgb(14,116,175)
+negro_claro = rgb(38,38,38)
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-fmk8yf');
+	src:url('../fonts/icomoon.eot?#iefix-fmk8yf') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-fmk8yf') format('woff'),
+		url('../fonts/icomoon.ttf?-fmk8yf') format('truetype'),
+		url('../fonts/icomoon.svg?-fmk8yf#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open sans';
+	src:url('../fonts/open sans/OpenSans-Semibold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Bree';
+	src:url('../fonts/Bree_Serif/BreeSerif-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+body
+	font-family 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif
+	font-weight normal
+	text-align center
+	header
+		background-color blanco
+		line-height 100px
+		.titulo
+			font-family: "Bree"
+			font-size 1em
+			margin 0
+			padding 0
+			h1
+				vertical-align middle
+				margin-top 25px
+				padding 0
+	nav
+		background-color negro_claro
+		width 100%
+		overflow-x auto
+		white-space nowrap
+		ul	
+			list-style none
+			margin 0
+			li 
+				display inline-block
+				a
+					color white
+					display inline-block
+					margin 0 1em
+					padding 1em
+				#inicio:before
+					font-family "icomoon"
+					content "\e900   "
+				#quienes_somos:before
+					font-family "icomoon"
+					content "\e976   "
+				#cursos:before
+					font-family "icomoon"
+					content "\e91f   "
+				#herramientas:before
+					font-family "icomoon"
+					content "\e996    "
+				#fotos:before
+					font-family "icomoon"
+					content "\e90f    "
+				#contactanos:before
+					font-family "icomoon"
+					content "\e972    "
+				#aula_virtual:before
+					font-family "icomoon"
+					content "\e600    "
+				#mapa:before
+					font-family "icomoon"
+					content "\e9ca    "
+				a:hover
+					background-color celeste
+					color white
+					text-decoration none
+	section
+		background-color azul
+		font-family "open sans"
+		color black
+		text-align justify
+		width 100%
+		#principal
+			background-color gris_claro
+			font-size 16px
+			padding 1em
+			margin 1em 0
+			p
+				margin 0
+		aside
+			margin 1em 0
+			font-size 16px
+			.subsection1
+				background-color gris_claro
+				border 2px solid negro_claro
+				margin 0 0 1em 0
+				div ul a
+					text-decoration none
+				div ul a:hover
+					color negro_claro
+					text-decoration none
+				.cabecera
+					background-color negro_claro
+					color white
+					padding 0.5em
+					margin 0
+					p
+						padding 0
+						margin 0
+				.contenedor
+					padding 1em
+			.subsection2
+				background-color gris_claro
+				border 2px solid negro_claro
+				.cabecera
+					background-color negro_claro
+					color white
+					padding 0.5em
+					margin 0
+					p
+						padding 0
+						margin 0
+				.contenedor
+					padding 1em
+	footer
+		background-color azul
+		font-weight bold
+		color white
+		width 100%
+		padding 1em 0 
+
+@media screen and (min-width: 1000px)
+	body
+		section
+			#principal 
+				width 75%
+				margin 1em 0.25em 1em 0
+			aside
+				width 22%
+				margin 1em 0 1em 0.25em
+			#principal, aside
+				display inline-block
+				vertical-align top
+				
+/*@media screen and (max-width: 768px)
+	body
+		nav
+			background-color blue
+	section
+		#principal
+			width 100%
+		aside
+			width 100%
+*/
