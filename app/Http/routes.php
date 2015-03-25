@@ -21,5 +21,10 @@ Route::controllers([
 ]);
 
 Route::get('/','EneiPageController@index');
-
+Route::get('contacto','EneiPageController@contacto');
+Route::get('mapa','EneiPageController@mapa');
+Route::get('cursos','EneiPageController@cursos');
+Route::get('fotos','EneiPageController@fotos');
+Route::get('informacion','EneiPageController@info');
+Route::post('send','EneiPageController@enviar_correo');
 ?>
