@@ -15,14 +15,15 @@ class CreatePreinscriptionTable extends Migration {
 		//
 		Schema::create('preinscriptions', function(Blueprint $table)
 		{
-			$table->create();
+			//$table->create();
 			$table->increments('id');
 			$table->string('dni',8);
 			$table->string('nombre',30);
 			$table->string('apellido',30);
-			$table->string('email');
-			$table->string('curso');
-			$table->string('interes');
+			$table->string('telefono',15);
+			$table->string('email',20);
+			$table->string('curso',50);
+			$table->string('interes',10);
 			$table->timestamps();
 		});
 	}

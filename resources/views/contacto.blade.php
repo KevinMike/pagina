@@ -15,15 +15,15 @@
 		{!! Form::open(['url' => '/send']) !!}
 			<div class="form-group">
 			{!! Form::label('name','Nombre : ') !!}
-			{!! Form::text('name',null,['class' => 'form-control']) !!}
+			{!! Form::text('name',null,['class' => 'form-control','required' => true]) !!}
 			</div>
 			<div class="form-group">
 			{!! Form::label('email','Correo Electronico : ') !!}
-			{!! Form::email('email',null, ['class' => 'form-control']) !!} 
+			{!! Form::email('email',null, ['class' => 'form-control','required' => true]) !!} 
 			</div>
 			<div class="form-group">
 			{!! Form::label('mensaje','Mensaje : ') !!}
-			{!! Form::textarea('mensaje',null, ['class' => 'form-control']) !!} 
+			{!! Form::textarea('mensaje',null, ['class' => 'form-control','required' => true]) !!} 
 			</div>
 			<div class="form-group">
 			{!! Form::submit('Enviar',['class' => 'btn btn-primary form-control'])!!}

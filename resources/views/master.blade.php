@@ -55,7 +55,8 @@
 			<div class="subsection2">
 				<div class="cabecera"><p>Pre-inscripción</p></div>
 				<div class="contenedor">
-					Si deseas realizar una preinscripción, abre el siguiente enlace
+					Si deseas realizar una preinscripción, abre el siguiente enlace <br>
+					<a href="{{ url('/preinscripcion')}}">Click Aca</a>
 				</div>
 			</div>
 		</aside>

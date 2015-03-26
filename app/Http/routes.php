@@ -26,5 +26,9 @@ Route::get('mapa','EneiPageController@mapa');
 Route::get('cursos','EneiPageController@cursos');
 Route::get('fotos','EneiPageController@fotos');
 Route::get('informacion','EneiPageController@info');
+Route::get('preinscripcion','EneiPageController@preinscripcion');
 Route::post('send','EneiPageController@enviar_correo');
+Route::post('guardar_preinscripcion','EneiPageController@guardar_preinscripcion');
+Route::post('add_post','EneiPageController@add_post');
+Route::post('delete_post','EneiPageController@delete_post');
 ?>

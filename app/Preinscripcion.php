@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class preinscription extends Model {
+class Preinscripcion extends Model {
 
 	public $table = "preinscriptions";
 

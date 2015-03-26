@@ -1,0 +1,39 @@
+verde = #476462
+blanco_opaco = #DCF2F2
+celeste_claro = #B0CBD9
+@font-face {
+	font-family: 'icono';
+	src:url('../fonts/publicacion/icomoon.eot?-lr2x8m');
+	src:url('../fonts/publicacion/icomoon.eot?#iefix-lr2x8m') format('embedded-opentype'),
+		url('../fonts/publicacion/icomoon.woff?-lr2x8m') format('woff'),
+		url('../fonts/publicacion/icomoon.ttf?-lr2x8m') format('truetype'),
+		url('../fonts/publicacion/icomoon.svg?-lr2x8m#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.slider
+	overflow hidden
+	margin 0
+	paddin 0
+.publicacion
+	background-color celeste_claro
+	border-radius 0.5em
+	.titulo 
+		border-radius 0.5em 0.5em 0 0
+		border-bottom 3px solid black
+		h2
+			margin 0 0.5em
+			paddin 0
+		h2:before
+			font-family "icono"
+			content "\e600    "
+	.fecha
+		color verde
+		margin 0 2em
+	.fecha:before
+		font-family "icono"
+		content "\e94e    "
+	.texto
+		margin 0 2em
+	.comentarios
+		background-color blue
