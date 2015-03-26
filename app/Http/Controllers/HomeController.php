@@ -30,7 +30,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$post = Post::all();
+		$post = Post::orderBy('id', 'DESC')->get();
 		return view('home',['post'=>$post]);
 	}
 

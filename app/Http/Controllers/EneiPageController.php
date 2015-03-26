@@ -24,9 +24,9 @@ class EneiPageController extends Controller
 	}
 	public function index()
 	{
-		$publicaciones = Post::all();
+		$publicaciones =  Post::orderBy('id', 'DESC')->get();
 		return view('index',["post" => $publicaciones]);
-		//return $publicaciones;
+		//return $publicaciones[2];
 	}
 	public function contacto()
 	{

@@ -1,7 +1,7 @@
 @extends('master')
 @section('contenido')
 	<h3>Realiza tu Preinscripción aca: </h3>
-	{!! Form::open(["url" => "/add_post"]) !!}
+	{!! Form::open(["url" => "/guardar_preinscripcion"]) !!}
 	<div class="form-group">
 	{!! Form::label('dni','Nro de DNI: ') !!}
 	{!! Form::text('dni',null,['class' => 'form-control','placeholder'=>'DNI','maxlength' => '8','required' => true]) !!}

@@ -1,6 +1,7 @@
 	@extends('master')
 
 	@section('cabecera')
+	<?php echo '<script type="text/javascript">var publicacion = new Array();</script>'; ?>
 	<link rel="stylesheet" href="css/publicacion.css">
 	<!-- Slider -->
 	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
@@ -20,14 +21,7 @@
 			});
 	</script>
 	<!-- FinSlide-->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.3";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+
 	@stop
 	
 	@section('contenido')
@@ -39,26 +33,35 @@
 	    <li><a href="http://www.nyc.gov" target="_blank"><img src="img/4.jpg"><span>New York, NY, USA</span></a></li>
 	</ul>
 	</div>
-	<br>
-	<br>
+
+	<h1>Noticias</h1>
+	<span>Total de Noticias: {{count($post)}}</span> 
 	@foreach ($post as $item)
-	<div class="publicacion">
-		<div class="titulo">
-			<h2>{{ $item->titulo }}</h2>
-			
-		</div>
-		<div class="p_contenido">
-			<div class="fecha">
-				{{$item->created_at}}
+			<!--<div class="publicacion">
+					<div class="titulo">
+						<h2>{{ $item->titulo }}</h2>
+					</div>
+					<div class="p_contenido">
+						<div class="fecha">
+							{{$item->updated_at}}
+						</div>
+						<div class="texto">
+							<p>{{$item->texto}}</p>
+						</div>
+						<div class="comentarios">
+							Caja de Comentarios de Facebook
+						</div>
+					</div>
 			</div>
-			<div class="texto">
-				<p>{{$item->texto}}</p>
-			</div>
-			<div class="comentarios">
-				<div class="fb-comments" data-href="http://www.myspace.site50.net" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
-				
-			</div>
-		</div>
-	</div>
+			<br>-->
+		<script type="text/javascript"> 
+			publicacion.push('<div class="publicacion"><div class="titulo"><h2>{{$item->titulo}}</h2></div><div class="p_contenido"><div class="fecha">{{$item->updated_at}}</div><div class="texto"><p>{{$item->texto}}</p></div><div class="comentarios">Caja de Comentarios de Facebook</div></div></div><br>');
+		</script>
 	@endforeach
+	<script type="text/javascript">
+		for (var i = 0 ; i<= 3; i++) {
+			document.write(publicacion[i]);
+		};
+		//document.write(publicacion);
+	</script>
 @endsection

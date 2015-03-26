@@ -19,7 +19,7 @@
 							{!! Form::textarea('texto',null,['class' => 'form-control', 'required' => true]) !!}
 						</div>
 						<div class="form-group">
-							{!! Form::submit('Registrar',['class' => 'form-control btn btn-primary']) !!}
+							{!! Form::submit('Registrar Publicación',['class' => 'form-control btn btn-primary']) !!}
 						</div>
 						{!! Form::close() !!}
 						<h1>ELIMINAR POST</h1>
@@ -28,12 +28,12 @@
 							{!! Form::label('titulo','Titulo : ') !!}
 							<select name="titulo" id="titulo">
 								@foreach ($post as $item)
-								<option value="{{$item->id}}">{{$item->titulo}} - {{$item->create_at}}</option>
+								<option value="{{$item->id}}">{{$item->titulo}} - {{$item->updated_at}}</option>
 								@endforeach
 							</select>
 						</div>
 						<div class="form-group">
-							{!! Form::submit('Registrar',['class' => 'form-control btn btn-warning']) !!}
+							{!! Form::submit('Eliminar Publicación',['class' => 'form-control btn btn-warning']) !!}
 						</div>
 						{!! Form::close() !!}
 				</div>
