@@ -6,12 +6,15 @@ use App\Curso;
 use App\Preinscripcion;
 use App\Post;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Pagination\Paginator ;
+use Illuminate\Pagination\LengthAwarePaginator;
 class EneiPageController extends Controller
 {
 	public function add_post(request $request)
 	{
 		$post = new Post;
 		$post->titulo = $request->input('titulo');
+		//$post->texto = nl2br($request->input('texto'));
 		$post->texto = $request->input('texto');
 		$post->save();
 		return Redirect::to('/home');
@@ -24,7 +27,9 @@ class EneiPageController extends Controller
 	}
 	public function index()
 	{
-		$publicaciones =  Post::orderBy('id', 'DESC')->get();
+		$publicaciones = Post::paginate(5);
+		//dd($publicaciones);
+		//$publicaciones =  Post::orderBy('id', 'DESC')->get();
 		return view('index',["post" => $publicaciones]);
 		//return $publicaciones[2];
 	}

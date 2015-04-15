@@ -59,6 +59,13 @@
 					<a href="{{ url('/preinscripcion')}}">Click Aca</a>
 				</div>
 			</div>
+			<div class="subsection3">
+				<div class="cabecera"><p>Servicios a los Participantes</p></div>
+				<div class="contenedor">
+					¿Estas buscando practicas pre-profesionales? <br>
+					<a href="{{ url('/preinscripcion')}}">Click Aca</a>
+				</div>
+			</div>
 		</aside>
 	</div>
 	</section>

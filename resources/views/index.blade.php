@@ -35,9 +35,8 @@
 	</div>
 
 	<h1>Noticias</h1>
-	<span>Total de Noticias: {{count($post)}}</span> 
 	@foreach ($post as $item)
-			<!--<div class="publicacion">
+			<div class="publicacion">
 					<div class="titulo">
 						<h2>{{ $item->titulo }}</h2>
 					</div>
@@ -46,22 +45,14 @@
 							{{$item->updated_at}}
 						</div>
 						<div class="texto">
-							<p>{{$item->texto}}</p>
+							<?php echo stripcslashes(nl2br(htmlentities($item->texto))); ?>
 						</div>
 						<div class="comentarios">
 							Caja de Comentarios de Facebook
 						</div>
 					</div>
 			</div>
-			<br>-->
-		<script type="text/javascript"> 
-			publicacion.push('<div class="publicacion"><div class="titulo"><h2>{{$item->titulo}}</h2></div><div class="p_contenido"><div class="fecha">{{$item->updated_at}}</div><div class="texto"><p>{{$item->texto}}</p></div><div class="comentarios">Caja de Comentarios de Facebook</div></div></div><br>');
-		</script>
+			<br>
 	@endforeach
-	<script type="text/javascript">
-		for (var i = 0 ; i<= 3; i++) {
-			document.write(publicacion[i]);
-		};
-		//document.write(publicacion);
-	</script>
+	<?php echo $post->render(); ?>
 @endsection
