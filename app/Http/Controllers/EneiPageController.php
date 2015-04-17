@@ -27,7 +27,7 @@ class EneiPageController extends Controller
 	}
 	public function index()
 	{
-		$publicaciones = Post::paginate(5);
+		$publicaciones = Post::orderBy('id', 'DESC')->paginate(5);
 		//dd($publicaciones);
 		//$publicaciones =  Post::orderBy('id', 'DESC')->get();
 		return view('index',["post" => $publicaciones]);
@@ -90,6 +90,10 @@ class EneiPageController extends Controller
 		$preinscripcion->interes = $request->input('interes');
 		$preinscripcion->save();
 		return Redirect::to('/');
+	}
+	public function practicas()
+	{
+		return view('practicas');
 	}
 }
 ?>

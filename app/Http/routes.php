@@ -31,10 +31,11 @@ Route::post('send','EneiPageController@enviar_correo');
 Route::post('guardar_preinscripcion','EneiPageController@guardar_preinscripcion');
 Route::post('add_post','EneiPageController@add_post');
 Route::post('delete_post','EneiPageController@delete_post');
+Route::get('practicas','EneiPageController@practicas');
 /*Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Pages'], function(){
 	Route::resource('Pages','PaginationIndex');
 });*/
 
-Route::resource('Pages','Pages\PaginationIndex')
+//Route::resource('Pages','Pages\PaginationIndex')
 
 ?>
