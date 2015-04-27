@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Curso;
 use App\Preinscripcion;
 use App\Post;
+use App\Foto;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Pagination\Paginator ;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -43,11 +44,14 @@ class EneiPageController extends Controller
 	}
 	public function cursos()
 	{
-		return view('cursos');
+		$curso = Curso::all();
+		return view('cursos',array('curso'=> $curso));
 	}
 	public function fotos()
 	{
-		return view('fotos');
+		$fotos = Foto::all();
+
+		return view('fotos',array("fotos"=>$fotos));
 	}
 	public function info()
 	{
@@ -94,6 +98,19 @@ class EneiPageController extends Controller
 	public function practicas()
 	{
 		return view('practicas');
+	}
+	public function add_curso(Request $request)
+	{
+		$curso = new Curso;
+		$curso->nombre = $request->input('nombre');
+		$curso->descripcion = $request->input('descripcion');
+		$curso->frecuencia = $request->input('frecuencia');
+		$curso->horario = $request->input('horario');
+		$curso->fecha_inicio = $request->input('fecha_inicio');
+		$curso->costo = $request->input('costo');
+		$curso->duracion = $request->input('duracion');
+		$curso->save();
+		return Redirect::to('/home');
 	}
 }
 ?>

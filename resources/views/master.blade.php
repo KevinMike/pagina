@@ -35,7 +35,7 @@
 			</ul>
 	</nav>
 	<section>
-	<div class="container">
+	<!--<div class="container">-->
 		<section id="principal" >
 			@yield('contenido')
 		</section>
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 		</aside>
-	</div>
+	<!--</div>-->
 	</section>
 	<footer>
 		Dirección: Av. San Martin 533 <br>

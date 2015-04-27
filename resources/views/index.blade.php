@@ -1,7 +1,6 @@
 	@extends('master')
 
 	@section('cabecera')
-	<?php echo '<script type="text/javascript">var publicacion = new Array();</script>'; ?>
 	<link rel="stylesheet" href="css/publicacion.css">
 	<!-- Slider -->
 	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
@@ -45,7 +44,8 @@
 							{{$item->updated_at}}
 						</div>
 						<div class="texto">
-							<?php echo stripcslashes(nl2br(htmlentities($item->texto))); ?>
+							<!--{!! nl2br(htmlentities($item->texto)) !!}-->
+							{!! nl2br($item->texto) !!}
 						</div>
 						<div class="comentarios">
 							Caja de Comentarios de Facebook

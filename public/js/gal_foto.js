@@ -9,8 +9,8 @@ $(document).ready(function(){
 	 });
 	 $('.imagen').each(function(){
 			 var rot = Math.random()*30-15+'deg';
-			 var left = Math.random()*50+'px';
-			 var top = Math.random()*150+'px';
+			 var left = Math.random()+'px';
+			 var top = Math.random()+'px';
 			 $(this).css('-webkit-transform' , 'rotate('+rot+')');
 			 $(this).css('-moz-transform' , 'rotate('+rot+')');
 			 $(this).css('top' , left);
