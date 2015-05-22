@@ -18,10 +18,10 @@ class CreateCursosTable extends Migration {
 			$table->string('nombre',30);
 			$table->longText('descripcion');
 			$table->date('fecha_inicio');
-			$table->string('duracion');
+			$table->string('duracion',50);
 			$table->integer('costo');
-			$table->string('frecuencia',120);
-			$table->string('horario',120);
+			$table->string('frecuencia',100);
+			$table->string('horario',100);
 			$table->timestamps();
 		});
 	}

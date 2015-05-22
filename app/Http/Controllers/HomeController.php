@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 use App\Post;
+use App\Curso;
+use App\Foto;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 class HomeController extends Controller {
 
 	/*
@@ -31,7 +36,61 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$post = Post::orderBy('id', 'DESC')->get();
-		return view('home',['post'=>$post]);
+		$foto = Foto::orderBy('id','DESC')->get();
+		$curso = Curso::all();
+		return view('home',['post'=>$post,'curso'=>$curso,'foto'=>$foto]);
 	}
-
+	public function r_update_curso(Request $request)
+	{
+		$curso = Curso::find($request->input('curso'));
+		return view('update_curso',array('curso'=>$curso));
+	}
+	public function update_curso(Request $request)
+	{
+		$curso = Curso::find($request->input('id'));
+		$curso->nombre = $request->input('nombre');
+		$curso->descripcion = $request->input('descripcion');
+		$curso->frecuencia = $request->input('frecuencia');
+		$curso->horario = $request->input('horario');
+		$curso->fecha_inicio = $request->input('fecha_inicio');
+		$curso->costo = $request->input('costo');
+		$curso->duracion = $request->input('duracion');
+		$curso->save();
+		return Redirect::to('/home');
+	}
+	public function delete_curso(Request $request)
+	{
+		$id = $request->input('curso');
+		Curso::find($id)->delete();
+		return Redirect::to('/home');
+	}
+	public function add_post(Request $request)
+	{
+		$post = new Post;
+		$post->titulo = $request->input('titulo');
+		//$post->texto = nl2br($request->input('texto'));
+		$post->texto = $request->input('texto');
+		$post->save();
+		return Redirect::to('/home');
+	}
+	public function delete_post(Request $request)
+	{
+		$id = $request->input('post');
+		Post::find($id)->delete();
+		return Redirect::to('/home');
+	}
+	public function r_update_post(Request $request)
+	{
+		$post = Post::find($request->input('post'));
+		return view('update_post',['post'=>$post]);
+	}
+	public function update_post(Request $request)
+	{
+		$post = Post::find($request->input('id'));
+		//echo $request->input('id');
+		$post->titulo = $request->input('titulo');
+		$post->texto = $request->input('texto');
+		$post->save();
+		return Redirect::to('/home');
+	}
 }

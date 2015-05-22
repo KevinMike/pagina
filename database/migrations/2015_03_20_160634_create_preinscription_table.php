@@ -13,7 +13,7 @@ class CreatePreinscriptionTable extends Migration {
 	public function up()
 	{
 		//
-		Schema::create('preinscriptions', function(Blueprint $table)
+		Schema::create('preinscripciones', function(Blueprint $table)
 		{
 			//$table->create();
 			$table->increments('id');

@@ -15,8 +15,8 @@ class CreateFotoTable extends Migration {
 		Schema::create('fotos', function($tabla) 
         {
             $tabla->increments('id');
-			$tabla->string('photo', 100);//campo para la foto
-            $tabla->string('descripcion', 200);
+			$tabla->string('foto', 100);
+            $tabla->string('descripcion', 50);
             $tabla->timestamps();
         });
 	}

@@ -1,3 +1,4 @@
+azul = #065580
 verde = #476462
 blanco_opaco = #DCF2F2
 celeste_claro = #B0CBD9
@@ -11,16 +12,20 @@ celeste_claro = #B0CBD9
 	font-weight: normal;
 	font-style: normal;
 }
+section
+	.principal
+		background-color azul
 .slider
 	overflow hidden
 	margin 0
 	paddin 0
 .publicacion
-	background-color white
 	box-shadow 5px 5px 5px #888888
+	background-color white
 	padding 0.5em
 	.titulo 
 		border-bottom 3px solid black
+		text-align justify
 		h2
 			margin 0
 		h2:before
@@ -29,9 +34,14 @@ celeste_claro = #B0CBD9
 	.fecha
 		color verde
 		margin 0 2em
+		text-align justify
+		font-size 0.8em
 	.fecha:before
 		font-family "icono"
 		content "\e94e    "
 	.texto
 		margin 0 2em
+		font-family "Times New Roman"
+		font-size 1em
+		text-align justify
 

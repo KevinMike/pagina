@@ -12,21 +12,29 @@
 		<textarea id="opinion" name="opinion" style="width: 100%; height: 200px" required></textarea><br/>
 		<input type="submit" name="Submit" value="Enviar"><br>
 		</form>-->
-		{!! Form::open(['url' => '/send']) !!}
+		{!! Form::open(['url' => '/send','class'=>"form-horizontal", 'role'=>"form"]) !!}
 			<div class="form-group">
-			{!! Form::label('name','Nombre : ') !!}
-			{!! Form::text('name',null,['class' => 'form-control','required' => true]) !!}
+				{!! Form::label('name','Nombre',array('class'=>"col-md-4 control-label")) !!}
+				<div class="col-md-6">
+					{!! Form::text('name',null,['class' => 'form-control','required' => true]) !!}
+				</div>
 			</div>
 			<div class="form-group">
-			{!! Form::label('email','Correo Electronico : ') !!}
-			{!! Form::email('email',null, ['class' => 'form-control','required' => true]) !!} 
+				{!! Form::label('email','Correo Electronico',array('class'=>"col-md-4 control-label")) !!}
+				<div class="col-md-6">
+					{!! Form::email('email',null, ['class' => 'form-control','required' => true]) !!} 
+				</div>
 			</div>
 			<div class="form-group">
-			{!! Form::label('mensaje','Mensaje : ') !!}
-			{!! Form::textarea('mensaje',null, ['class' => 'form-control','required' => true]) !!} 
+				{!! Form::label('mensaje','Mensaje',array('class'=>"col-md-4 control-label")) !!}
+				<div class="col-md-6">
+					{!! Form::textarea('mensaje',null, ['class' => 'form-control','required' => true]) !!} 
+				</div>
 			</div>
 			<div class="form-group">
-			{!! Form::submit('Enviar',['class' => 'btn btn-primary form-control'])!!}
+				<div class="col-md-6 col-md-offset-4">
+				{!! Form::submit('Enviar',['class' => 'btn btn-primary']) !!}
+				</div>
 			</div>
 		{!! Form::close() !!}
 	@endsection

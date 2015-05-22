@@ -11,28 +11,18 @@ use Illuminate\Pagination\Paginator ;
 use Illuminate\Pagination\LengthAwarePaginator;
 class EneiPageController extends Controller
 {
-	public function add_post(request $request)
-	{
-		$post = new Post;
-		$post->titulo = $request->input('titulo');
-		//$post->texto = nl2br($request->input('texto'));
-		$post->texto = $request->input('texto');
-		$post->save();
-		return Redirect::to('/home');
-	}
-	public function delete_post(request $request)
-	{
-		$id = $request->input('titulo');
-		Post::find($id)->delete();
-		return Redirect::to('/home');
-	}
 	public function index()
 	{
-		$publicaciones = Post::orderBy('id', 'DESC')->paginate(5);
+		$publicaciones = Post::orderBy('id', 'DESC')->paginate(4);
 		//dd($publicaciones);
 		//$publicaciones =  Post::orderBy('id', 'DESC')->get();
 		return view('index',["post" => $publicaciones]);
 		//return $publicaciones[2];
+	}
+	public function post($id)
+	{
+		$publicaciones = Post::find($id);
+		return view('post',["item" => $publicaciones]);
 	}
 	public function contacto()
 	{
@@ -112,5 +102,6 @@ class EneiPageController extends Controller
 		$curso->save();
 		return Redirect::to('/home');
 	}
+
 }
 ?>

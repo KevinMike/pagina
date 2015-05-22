@@ -1,5 +1,11 @@
 @extends('master')
 @section('cabecera')
+<style>
+	#principal
+	{
+		text-align: justify;
+	}
+</style>
 @endsection
 @section('contenido')
 <h2>NOSOTROS</h2>

@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preinscripcion extends Model {
 
-	public $table = "preinscriptions";
+	public $table = "preinscripciones";
 
 }

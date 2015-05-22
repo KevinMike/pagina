@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/app.css">
+	<!-- JQUERY-->
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/jquery-ui-1.11.3/jquery-ui.js"></script>
+	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
 	@yield('cabecera')
 </head>
 <body onload="initialize()">

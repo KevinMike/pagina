@@ -11,11 +11,15 @@
 		</div>
 		<div class="contenido_curso">
 			<div class="detalles">
-			Fecha de Inicio: {{$item->fecha_inicio}} <br>
-			Duracion: {{$item->duracion}} <br>
-			Frecuencia: {{$item->frecuencia}} <br>
-			Costo: {{$item->costo}} <br>
-			Horario: {{$item->horario}} <br>
+			<bold>Fecha de Inicio: </bold>
+			<br>{{$item->fecha_inicio}} <br>
+			Duracion: 
+			<br>{{$item->duracion}} <br>
+			Frecuencia: <br>{{$item->frecuencia}}<br>
+			Costo: 
+			<br>{{$item->costo}} soles<br>
+			Horario: 
+			<br>{{$item->horario}} <br>
 			</div>
 			<div class="descripcion">
 			{{$item->descripcion}}	
