@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Enei;
 
 use Illuminate\Database\Eloquent\Model;
 

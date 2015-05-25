@@ -3,7 +3,6 @@
 	@section('cabecera')
 	<!--script de facebook FACEBOOK COMMENT PLUGIN-->
 	<script type="text/javascript">
-
 			$(document).ready(function() {
 				  $.ajaxSetup({ cache: true });
 				  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
@@ -31,15 +30,7 @@
 				}(document, 'script', 'facebook-jssdk'));
 		    
 			});
-
-			$(window).load(function() {
-				$('#preloader').fadeOut('slow');
-				$('body').css({'overflow':'visible'});
-			})
-
 	</script>
-
-
 	<link rel="stylesheet" href="css/publicacion.css">
 	<!-- Slider -->
 	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
@@ -87,30 +78,9 @@
 							{!! nl2br($item->texto) !!}
 						</div>
 						<div class="comentarios">
-							    <div id="preloader" style="    
-							    body {
-								        overflow: hidden;
-								    }
-								    #preloader {
-								        position: fixed;
-								        top:0; left:0;
-								        right:0; bottom:0;
-								        background: #000;
-								        z-index: 100;
-								    }
-								    #loader {
-								        width: 100px;
-								        height: 100px;
-								        position: absolute;
-								        left:50%; top:50%;
-								        background: url(../img/loader.gif) no-repeat center 0;
-								        margin:-50px 0 0 -50px;
-								    }"/>
-															        <div id="loader"></div>
-							    </div>
 							<div id="fb-root">
+								<div class="fb-comments" data-href="http://localhost:8080/pagina/public/post/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
 							</div>
-								<div class="fb-comments" data-href="http://dragonball.lan/pagina/public/post/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
 						</div>
 					</div>
 			</div>

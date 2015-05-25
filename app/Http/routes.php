@@ -12,7 +12,7 @@
 */
 
 //Route::get('/', 'WelcomeController@index');
-use \App\Foto;
+use \Enei\Foto;
 //Rutas del Controlador de control
 Route::get('home', 'HomeController@index');
 Route::post('home/update_curso','HomeController@update_curso');
@@ -99,7 +99,7 @@ Route::post('eliminar_foto',function(){
 
 
 //Aplicaciones REST
-/*Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Pages'], function(){
+/*Route::group(['prefix' => 'admin', 'namespace' => 'Enei\Http\Controllers\Pages'], function(){
     Route::resource('Pages','PaginationIndex');
 });*/
 

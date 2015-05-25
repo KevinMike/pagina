@@ -76,7 +76,7 @@
 							    </div>
 							<div id="fb-root">
 							</div>
-								<div class="fb-comments" data-href="http://dragonball.lan/pagina/public/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
+								<div class="fb-comments" data-href="http://localhost:8080/pagina/public/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
 						</div>
 					</div>
 			</div>

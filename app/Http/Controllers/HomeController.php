@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers;
-use App\Post;
-use App\Curso;
-use App\Foto;
+<?php namespace Enei\Http\Controllers;
+use Enei\Post;
+use Enei\Curso;
+use Enei\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 

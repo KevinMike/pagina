@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Enei
+        psr4_prefix: Enei
         src_path: app

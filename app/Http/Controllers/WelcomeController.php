@@ -1,6 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Enei\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Enei\Http\Controllers\Controller;
 
 class WelcomeController extends Controller {
 

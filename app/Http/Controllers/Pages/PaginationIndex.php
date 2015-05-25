@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers\Pages;
+<?php namespace Enei\Http\Controllers\Pages;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Enei\Http\Requests;
+use Enei\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Post;
+use Enei\Post;
 class PaginationIndex extends Controller {
 
 	/**

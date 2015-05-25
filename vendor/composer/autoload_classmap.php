@@ -8,7 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'CreateCursosTable' => $baseDir . '/database/migrations/2015_03_25_141026_create_cursos_table.php',
     'CreateFotoTable' => $baseDir . '/database/migrations/2015_04_21_162245_create_foto_table.php',
-    'CreateFotosTable' => $baseDir . '/database/migrations/2015_04_21_164136_create_fotos_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePostTable' => $baseDir . '/database/migrations/2015_03_26_051741_create_post_table.php',
     'CreatePreinscriptionTable' => $baseDir . '/database/migrations/2015_03_20_160634_create_preinscription_table.php',
@@ -17,7 +16,6 @@ return array(
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',
-    'Foto' => $baseDir . '/database/migrations/2015_04_15_154505_foto.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',

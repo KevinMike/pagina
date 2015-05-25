@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Enei\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Enei\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Curso;
-use App\Preinscripcion;
-use App\Post;
-use App\Foto;
+use Enei\Curso;
+use Enei\Preinscripcion;
+use Enei\Post;
+use Enei\Foto;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Pagination\Paginator ;
 use Illuminate\Pagination\LengthAwarePaginator;

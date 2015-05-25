@@ -17,11 +17,12 @@
 	<header>
 			<div class="container">
 				<div class="row">
-					<div class="logo col-lg-2 col-md-12 " >
-						<img src="img/logo.jpg" alt="" width="100">
+					<div class="titulo col-lg-6 col-lg-12 ">
+						<p valign="middle">ESCUELA NACIONAL DE ESTADISTICA E INFORMÁTICA<br>Sede Tacna</p>
 					</div>
-					<div class="titulo col-lg-9 col-lg-12 ">
-						<h1 valign="middle">ESCUELA NACIONAL DE ESTADISTICA E INFORMÁTICA<br>Sede Tacna</h1>
+					<div class="logo col-lg-6 col-md-12 " >
+						<img id="img1"src="img/logo.jpg" alt="" width="180px" style="margin-right: 20px">
+						<img id="img2" src="img/inei.jpg" alt="" width="180px">
 					</div>
 				</div>
 			</div>
