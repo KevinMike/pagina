@@ -17,19 +17,31 @@
 	<header>
 			<div class="container">
 				<div class="row">
-					<div class="titulo col-lg-6 col-lg-12 ">
+					<div class="titulo col-lg-6 col-md-12 ">
 						<p valign="middle">ESCUELA NACIONAL DE ESTADISTICA E INFORMÁTICA<br>Sede Tacna</p>
 					</div>
 					<div class="logo col-lg-6 col-md-12 " >
-						<img id="img1"src="img/logo.jpg" alt="" width="180px" style="margin-right: 20px">
-						<img id="img2" src="img/inei.jpg" alt="" width="180px">
+						<img id="img1"src="img/logo.jpg" alt="" height="100px">
+						<img id="img2" src="img/inei.jpg" alt="" height="100px">
 					</div>
 				</div>
 			</div>
 	</header>
-	<nav>
-			<ul>
-				<li><a href="{{ url('/') }}" id="inicio">Inicio</a></li>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="{{ url('/') }}" id="inicio">Inicio</a>
+		      <!--<a class="navbar-brand" href="#">Brand</a>-->
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="{{ url('/') }}" id="inicio">Inicio</a></li>
 				<li><a href="{{ url('/informacion') }}" id="quienes_somos">Quienes Somos</a></li>
 				<li><a href="{{ url('/cursos') }}" id ="cursos">Cursos</a></li>
 				<!--<li><a href="" id="herramientas">Herramientas</a></li>-->
@@ -38,6 +50,7 @@
 				<li><a target="_blank" href="http://localhost/moodle" id="aula_virtual">Aula Virtual</a></li>
 				<li><a href="{{ url('/mapa') }}" id="mapa">Mapa</a></li>
 			</ul>
+		</div>
 	</nav>
 	<section>
 	<!--<div class="container">-->
