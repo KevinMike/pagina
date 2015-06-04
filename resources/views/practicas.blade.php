@@ -1,7 +1,5 @@
 @extends('master')
 @section('contenido')
-<h4 style="text-align: center;">Prácticas Pre- Profesionales en el INEI</h4>
-<br>
 Objetivos:
 <br>
 <ul>

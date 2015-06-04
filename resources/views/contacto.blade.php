@@ -1,7 +1,6 @@
 	@extends('master')
-
 	@section('contenido')
-		<h6>Envianos tu mensaje y en breve te responderemos.</h6>
+
 		{!! Form::open(['url' => '/send','class'=>"form-horizontal", 'role'=>"form"]) !!}
 			<div class="form-group">
 				{!! Form::label('name','Nombre',array('class'=>"col-md-4 control-label")) !!}

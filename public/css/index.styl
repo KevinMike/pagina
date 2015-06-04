@@ -20,7 +20,13 @@ negro_claro = rgb(38,38,38)
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Bree';
+	font-family: 'subheader';
+	src:url('../fonts/Monofett/Monofett.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'header';
 	src:url('../fonts/Bree_Serif/BreeSerif-Regular.ttf');
 	font-weight: normal;
 	font-style: normal;
@@ -30,11 +36,22 @@ body
 	font-weight normal
 	text-align center
 	header
-		background-color blanco
+		margin-top 4em
+		margin-bottom 1em
 		text-align center
-		margin-top 5em
-		margin-bottom 2em
-		font-size 1em
+		.titulo
+			font-size 3em
+			#p1
+				font-family "header"
+				padding 0
+				margin 0
+			#p2
+				font-family "subheader"
+				padding 0
+				margin 0
+		.logo
+			#img1
+				margin-right 2em
 	.items
 		text-align center			
 		#inicio:before
@@ -186,14 +203,15 @@ body
 			#principal, aside
 				display inline-block
 				vertical-align top
+
+		
 				
 /*@media screen and (max-width: 768px)
 	body
-		nav
-			background-color blue
-	section
-		#principal
-			width 100%
-		aside
-			width 100%
-*/
+		header
+			text-align center
+			.titulo
+				font-size 3em
+			.logo
+				#img1
+					margin-right 10px*/

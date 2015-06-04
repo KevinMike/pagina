@@ -28,17 +28,16 @@
 <body onload="initialize()">
 	<header>
 			<div class="container">
-				<div class="row">
-					<img class="col-lg-2 col-md-6 " id="img2" src="img/inei.jpg" alt="" height="100px">
-					<div class="col-lg-8 col-md-0 titulo">
-						<p valign="middle">ESCUELA NACIONAL DE ESTADISTICA E INFORMÁTICA<br>Sede Tacna</p>
+					<!--<img class="col-lg-2 col-md-6 " id="img2" src="img/inei.jpg" alt="" height="100px">-->
+					<div class="titulo">
+						<p id="p1">ESCUELA NACIONAL DE ESTADÍSTICA E INFORMÁTICA</p>
+						<p id="p2">Sede Tacna</p>
 					</div>
-					<img class="col-lg-2 col-md-6 " id="img1"src="img/logo.jpg" alt="" height="100px">
-					<!--<div class="logo col-lg-6 col-md-12 " >
-						<img id="img1"src="img/logo.jpg" alt="" height="100px">
-						<img id="img2" src="img/inei.jpg" alt="" height="100px">
-					</div>-->
-				</div>
+					<!--<img class="col-lg-1 col-md-6 " id="img1"src="img/logo.jpg" alt="" height="100px">-->
+					<div class="logo" >
+						<img id="img1" src="img/inei.jpg" alt="" height="100px">
+						<img id="img2"src="img/logo.jpg" alt="" height="100px">
+					</div>
 			</div>
 	</header>
 
@@ -52,7 +51,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="{{ url('/') }}" id="inicio">ENEI</a>
+	      <a class="navbar-brand" href="{{ url('/') }}" id="inicio">ENEI - Tacna</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
