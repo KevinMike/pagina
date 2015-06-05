@@ -3,11 +3,14 @@
 <link rel="stylesheet" href="css/curso.css">
 @endsection
 @section('contenido')
-<h1>Cursos Disponibles</h1>
+	<div class="subtitulo" style=" display: block; width: 100%; border-bottom: 5px solid black;">
+		<h2 >¿Qué Cursos Dictamos?</h2>
+	</div>
+	<br>
 	@foreach($curso as $item)
 	<div class="curso">
 		<div class="titulo">
-			<p>{{$item->nombre}}</p>
+			<p id="titulo_curso">{{$item->nombre}}</p>
 		</div>
 		<div class="contenido_curso">
 			<div class="detalles">

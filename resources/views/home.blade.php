@@ -2,19 +2,17 @@
 
 @section('content')
   <!--Agregar enlaces a las publicaciones-->
-	<script type="text/javascript">
-		function agregar_enlace () {
+	<script>
+		  $(function() {
+		    $( "#datepicker" ).datepicker();
+		  });
+	/*	function agregar_enlace () {
 			var link = document.getElementById("link").value;
 			var nombre = document.getElementById("nombre").value;
 			var cadena = "<a target='_blank' href='"+ link +"'>"+nombre+"</a>";
 			document.getElementById("texto").value = document.getElementById("texto").value + cadena;
-		}
+		}*/
 	</script>
-	<!-- JQUERY-->
-	<script src="js/jquery-2.1.3.min.js"></script>
-	<script src="js/jquery-ui-1.11.3/jquery-ui.js"></script>
-	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
-  <!--FINJQUERY-->
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -119,7 +117,7 @@
 							<div class="form-group">
 								{!! Form::label('fecha_inicio','Fecha de Inicio',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
-									{!! Form::text('fecha_inicio',null,array('class'=>"form-control",'required'=>true)) !!}
+									{!! Form::text('fecha_inicio',null,array('class'=>"form-control",'required'=>true,'id'=>"datepicker")) !!}
 								</div>
 							</div>
 							<div class="form-group">

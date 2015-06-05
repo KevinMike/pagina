@@ -10,7 +10,11 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
+	<!-- JQUERY-->
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/jquery-ui-1.11.3/jquery-ui.js"></script>
+	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
+	<!-- FIN JQUERY -->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

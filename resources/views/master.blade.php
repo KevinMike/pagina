@@ -93,21 +93,22 @@
 				</div>
 				<div class="contenedor">
 					<ul>
-						<li><a target="_blank" href="http://www.inei.gob.pe/">INEI</a></li>
-						<li><a target="_blank" href="https://www.facebook.com/enei.tacna?ref=ts&fref=ts">ENEI- Facebook</a></li>
-						<li><a target="_blank" href="">ENEI - Youtube</a></li>
+						<li><a id="pagina" target="_blank" href="http://www.inei.gob.pe/">INEI - Página Oficial</a></li><br>
+						<li><a id="facebook" target="_blank" href="https://www.facebook.com/enei.tacna?ref=ts&fref=ts">ENEI- Facebook</a></li><br>
+						<li><a id="twitter" target="_blank" href="">ENEI - Twitter</a></li><br>
+						<li><a id="youtube" target="_blank" href="">ENEI - Youtube</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="subsection2">
-				<div class="cabecera"><p>Pre-inscripción</p></div>
+				<div class="cabecera"><p id="titulo2">Pre-inscripción</p></div>
 				<div class="contenedor">
 					Si deseas realizar una preinscripción, abre el siguiente enlace <br>
 					<a href="{{ url('/preinscripcion')}}">Click Aca</a>
 				</div>
 			</div>
 			<div class="subsection3">
-				<div class="cabecera"><p>Servicios a los Participantes</p></div>
+				<div class="cabecera"><p id="titulo3">Servicios a los Participantes</p></div>
 				<div class="contenedor">
 					¿Estas buscando practicas pre-profesionales? <br>
 					<a href="{{ url('/practicas')}}">Click Aca</a>

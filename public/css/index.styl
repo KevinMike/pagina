@@ -4,18 +4,20 @@ blanco = rgb(254,254,254)
 celeste = rgb(14,116,175)
 negro_claro = rgb(38,38,38)
 @font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-fmk8yf');
-	src:url('../fonts/icomoon.eot?#iefix-fmk8yf') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-fmk8yf') format('woff'),
-		url('../fonts/icomoon.ttf?-fmk8yf') format('truetype'),
-		url('../fonts/icomoon.svg?-fmk8yf#icomoon') format('svg');
+	font-family: 'open sans';
+	src:url('../fonts/open sans/OpenSans-Semibold.ttf');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'open sans';
-	src:url('../fonts/open sans/OpenSans-Semibold.ttf');
+	font-family: 'Alegreya';
+	src:url('../fonts/Alegreya/Alegreya-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Amaranth';
+	src:url('../fonts/Amaranth/Amaranth-Regular.ttf');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,8 +33,17 @@ negro_claro = rgb(38,38,38)
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/fonts/icomoon.eot?g83792');
+	src:url('../fonts/icomoon/fonts/icomoon.eot?#iefixg83792') format('embedded-opentype'),
+		url('../fonts/icomoon/fonts/icomoon.ttf?g83792') format('truetype'),
+		url('../fonts/icomoon/fonts/icomoon.woff?g83792') format('woff'),
+		url('../fonts/icomoon/fonts/icomoon.svg?g83792#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 body
-	font-family 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif
 	font-weight normal
 	text-align center
 	header
@@ -59,22 +70,19 @@ body
 			content "\e900   "
 		#quienes_somos:before
 			font-family "icomoon"
-			content "\e976   "
+			content "\e972   "
 		#cursos:before
 			font-family "icomoon"
-			content "\e91f   "
-		#herramientas:before
-			font-family "icomoon"
-			content "\e996    "
+			content "\e603   "
 		#fotos:before
 			font-family "icomoon"
-			content "\e90f    "
+			content "\e600    "
 		#contactanos:before
 			font-family "icomoon"
-			content "\e972    "
+			content "\e944    "
 		#aula_virtual:before
 			font-family "icomoon"
-			content "\e600    "
+			content "\e921    "
 		#mapa:before
 			font-family "icomoon"
 			content "\e9ca    "
@@ -124,13 +132,13 @@ body
 	section
 		border-top 0.5em solid negro_claro
 		background-color azul
-		font-family "open sans"
 		color black
 		text-align center
 		width 100%
 		#principal
 			background-color gris_claro
-			font-size 16px
+			font-family "open sans"
+			font-size 1em
 			padding 1em
 			margin 0 0 1em 0
 			p
@@ -157,6 +165,21 @@ body
 						margin 0
 				.contenedor
 					padding 1em
+					ul
+						list-style none
+						text-align left
+					#pagina:before
+						font-family "icomoon"
+						content "\e605    "
+					#facebook:before
+						font-family "icomoon"
+						content "\ea8d    "
+					#twitter:before
+						font-family "icomoon"
+						content "\ea92    "
+					#youtube:before
+						font-family "icomoon"
+						content "\ea9a    "
 			.subsection2
 				background-color gris_claro
 				border 2px solid negro_claro

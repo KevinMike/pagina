@@ -1,5 +1,14 @@
 @extends('master')
+<style type="text/css">
+	#principal{
+		text-align: justify;
+	}
+</style>
 @section('contenido')
+<div class="subtitulo" style=" display: block; width: 100%; border-bottom: 5px solid black;">
+		<h2 >Servicio a los Participantes</h2>
+</div>
+<br>
 Objetivos:
 <br>
 <ul>
@@ -10,6 +19,7 @@ Objetivos:
 DURACIÓN
 <br>
 Las Prácticas Pre-Profesionales tendrán una duración mínima de 04 meses a razón de 04 horas diarias, de lunes a viernes en el turno de mañana de 09.00 a 13.00 hrs o tarde de 14.00 a 18.00hrs según los requerimientos del área solicitante. Las prácticas podrán ser prorrogadas hasta por dos (02) meses más, a solicitud del Director de la Unidad o Área donde se desarrollen las prácticas
+<br>
 <br>
 BENEFICIOS
 <br>

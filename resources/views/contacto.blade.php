@@ -1,6 +1,9 @@
 	@extends('master')
 	@section('contenido')
-
+	<div class="subtitulo" style=" display: block; width: 100%; border-bottom: 5px solid black;">
+			<h2 >Envianos un mensaje y te responderemos en breve</h2>
+	</div>
+	<br>
 		{!! Form::open(['url' => '/send','class'=>"form-horizontal", 'role'=>"form"]) !!}
 			<div class="form-group">
 				{!! Form::label('name','Nombre',array('class'=>"col-md-4 control-label")) !!}
@@ -26,4 +29,16 @@
 				</div>
 			</div>
 		{!! Form::close() !!}
+
+
+		  <script>
+		  $(function() {
+		    $( "#datepicker" ).datepicker();
+		  });
+		  </script>
+		<p>Date: <input type="text" id="datepicker"></p>
+		 
+ 
+
+
 	@endsection

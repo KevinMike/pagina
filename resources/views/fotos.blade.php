@@ -9,7 +9,7 @@
 @endsection
 @section('contenido')
 		<div class="subtitulo" style=" display: block; width: 100%; border-bottom: 5px solid black;">
-			<h2 >GALERIA DE FOTOS DINÁMICA</h2>
+			<h2 >Galería de Fotos Dinámica</h2>
 		</div>
 		<br>
 		@foreach($fotos as $item)
