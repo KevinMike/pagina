@@ -57,7 +57,8 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="items nav navbar-nav ">
-				<li class="active"><a href="{{ url('/') }}" id="inicio">Inicio</a></li>
+				<!--<li class="active"><a href="{{ url('/') }}" id="inicio">Inicio</a></li>-->
+                <li><a href="{{ url('/') }}" id="inicio">Inicio</a></li>
 				<li><a href="{{ url('/informacion') }}" id="quienes_somos">Quienes Somos</a></li>
 				<li><a href="{{ url('/cursos') }}" id ="cursos">Cursos</a></li>
 				<li><a href="{{ url('/fotos') }}" id="fotos">Fotos</a></li>

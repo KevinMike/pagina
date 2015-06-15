@@ -22,7 +22,15 @@
 				<div class="panel-body">
 
 						<h1>PUBLICACIONES</h1>
-						<h3>Insertar enlaces en los post</h3>
+
+                    <script>
+                        $(function() {
+                            $( "#datepicker" ).datepicker();
+                        });
+                    </script>
+                    <p>Date: <input type="text" id="datepicker"></p>
+
+                    <h3>Insertar enlaces en los post</h3>
 						<form class="form-horizontal" role="form" >
 				        	<div class="form-group">
 					            <label class="col-md-4 control-label" for="link">Enlace: </label>

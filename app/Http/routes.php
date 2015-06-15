@@ -13,6 +13,8 @@
 
 //Route::get('/', 'WelcomeController@index');
 use \Enei\Foto;
+Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
+Route::get('contacto', ['as' => 'contact', 'uses' => 'MailController@index'] );
 //Rutas del Controlador de control
 Route::get('home', 'HomeController@index');
 Route::post('home/update_curso','HomeController@update_curso');
@@ -30,13 +32,13 @@ Route::controllers([
 //Rutas de la pagina web
 Route::get('/','EneiPageController@index');
 Route::get('post/{id}','EneiPageController@post');
-Route::get('contacto','EneiPageController@contacto');
+//Route::get('contacto','EneiPageController@contacto');
 Route::get('mapa','EneiPageController@mapa');
 Route::get('cursos','EneiPageController@cursos');
 Route::get('fotos','EneiPageController@fotos');
 Route::get('informacion','EneiPageController@info');
 Route::get('preinscripcion','EneiPageController@preinscripcion');
-Route::post('send','EneiPageController@enviar_correo');
+//Route::post('send','EneiPageController@enviar_correo');
 Route::post('guardar_preinscripcion','EneiPageController@guardar_preinscripcion');
 Route::post('add_curso','EneiPageController@add_curso');
 Route::get('practicas','EneiPageController@practicas');
