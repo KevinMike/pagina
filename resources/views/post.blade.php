@@ -1,8 +1,9 @@
-	@extends('master')
+@extends('master')
 
-	@section('cabecera')
-	<!--script de facebook FACEBOOK COMMENT PLUGIN-->
-	<script type="text/javascript">
+@section('cabecera')
+    <link rel="stylesheet" href="css/publicacion.css">
+    <!--script de facebook FACEBOOK COMMENT PLUGIN-->
+    <script>
 
 			$(document).ready(function() {
 				  $.ajaxSetup({ cache: true });
@@ -11,7 +12,7 @@
 					      appId      : '1608437069443308',
 					      xfbml      : true,
 					      version    : 'v2.3'
-					    });    
+					    });
 				    $('#loginbutton,#feedbutton').removeAttr('disabled');
 				    FB.getLoginStatus(updateStatusCallback);
 				  });
@@ -23,18 +24,13 @@
 				  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.3";
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));
-		    
+
 			});
-
-			$(window).load(function() {
-				$('#preloader').fadeOut('slow');
-				$('body').css({'overflow':'visible'});
-			})
-
-	</script>
-
-
-	<link rel="stylesheet" href="css/publicacion.css">
+            $(window).load(function() {
+                $('#preloader').fadeOut('slow');
+                $('body').css({'overflow':'visible'});
+            });
+    </script>
 
 	@stop
 	
@@ -72,11 +68,11 @@
 								        background: url(../img/loader.gif) no-repeat center 0;
 								        margin:-50px 0 0 -50px;
 								    }"/>
-															        <div id="loader"></div>
+								      <div id="loader"></div>
 							    </div>
 							<div id="fb-root">
 							</div>
-								<div class="fb-comments" data-href="http://localhost:8080/pagina/public/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
+								<div class="fb-comments" data-href="http://192.168.1.97/pagina/public/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
 						</div>
 					</div>
 			</div>

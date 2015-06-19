@@ -21,14 +21,15 @@ class CreatePreinscripcionTable extends Migration {
             $table->string('apellido',30);
             $table->string('telefono',15);
             $table->string('email',20);
-            $table->integer('curso');
             $table->string('interes',10);
             $table->timestamps();
         });
 
         Schema::table('preinscripciones', function($table)
         {
+            $table->integer('curso')->unsigned();
             $table->foreign('curso')->references('id')->on('cursos');
+
         });
 	}
 

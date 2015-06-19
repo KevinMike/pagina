@@ -6,12 +6,12 @@
 		  $(function() {
 		    $( "#datepicker" ).datepicker();
 		  });
-	/*	function agregar_enlace () {
+		function agregar_enlace () {
 			var link = document.getElementById("link").value;
 			var nombre = document.getElementById("nombre").value;
 			var cadena = "<a target='_blank' href='"+ link +"'>"+nombre+"</a>";
 			document.getElementById("texto").value = document.getElementById("texto").value + cadena;
-		}*/
+		}
 	</script>
 <div class="container">
 	<div class="row">

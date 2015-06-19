@@ -3,33 +3,24 @@
 	@section('cabecera')
 	<!--script de facebook FACEBOOK COMMENT PLUGIN-->
 	<script type="text/javascript">
-			$(document).ready(function() {
-				  $.ajaxSetup({ cache: true });
-				  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-					    FB.init({
-					      appId      : '1608437069443308',
-					      xfbml      : true,
-					      version    : 'v2.3'
-					    });    
-				    $('#loginbutton,#feedbutton').removeAttr('disabled');
-				    FB.getLoginStatus(updateStatusCallback);
-				  });
+        $(document).ready(function() {
 
-				  	var pgwSlider = $('.pgwSlider').pgwSlider({
-				    	displayControls : true,
-				    	transitionEffect: 'fading',
-				    	selectionMode:	'mouveOver',
-				    });
 
-				(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.3";
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-		    
-			});
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.3&appId=1608437069443308";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+			  	var pgwSlider = $('.pgwSlider').pgwSlider({
+			    	displayControls : true,
+			    	transitionEffect: 'fading',
+			    	selectionMode:	'mouveOver',
+			    });
+  
+		});
 	</script>
 	<link rel="stylesheet" href="css/publicacion.css">
 	<!-- Slider -->
@@ -78,9 +69,8 @@
 							{!! nl2br($item->texto) !!}
 						</div>
 						<div class="comentarios">
-							<div id="fb-root">
-								<div class="fb-comments" data-href="http://localhost:8080/pagina/public/post/{{$item->id}}" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
-							</div>
+                            <div id="fb-root"></div>
+                            <div class="fb-comments" data-href="http://enei.tacna.com/{{ $item->id  }}" data-numposts="5" width="100%"></div>
 						</div>
 					</div>
 			</div>
