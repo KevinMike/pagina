@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="witdh=device-width, intial-scale=1, maximun-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ENEI: Escuela del Instituto Nacional de Ingeniería en Informática y Sistemas</title>
 	
 	<!-- JQUERY-->
-	<script src="js/jquery-2.1.3.min.js"></script>
-	<script src="js/jquery-ui-1.11.3/jquery-ui.js"></script>
-	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
+	<script src="{{asset('js/jquery-2.1.3.min.js')}}"></script>
+	<script src="{{asset('js/jquery-ui-1.11.3/jquery-ui.js')}}"></script>
+	<link rel="stylesheet" href="{{asset('')}}js/jquery-ui-1.11.3/jquery-ui.css">
 	<!-- FIN JQUERY -->
 	
 	<!-- BOOTSTRAP -->
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
+	<script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+	<script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 	<!-- FIN BOOTSTRAP --> 
 
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
 	<!--<link rel="stylesheet" href="css/app.css">-->
 	@yield('cabecera')
 
@@ -35,8 +35,8 @@
 					</div>
 					<!--<img class="col-lg-1 col-md-6 " id="img1"src="img/logo.jpg" alt="" height="100px">-->
 					<div class="logo" >
-						<img id="img1" src="img/inei.jpg" alt="" height="100px">
-						<img id="img2"src="img/logo.jpg" alt="" height="100px">
+						<img id="img1" src="{{asset('img/inei.jpg')}}" alt="" height="100px">
+						<img id="img2"src="{{asset('img/logo.jpg')}}" alt="" height="100px">
 					</div>
 			</div>
 	</header>
@@ -111,7 +111,7 @@
 			<div class="subsection3">
 				<div class="cabecera"><p id="titulo3">Servicios a los Participantes</p></div>
 				<div class="contenedor">
-					¿Estas buscando practicas pre-profesionales? <br>
+					¿Estas buscando practicas Pre-Profesionales? <br>
 					<a href="{{ url('/practicas')}}">Click Aca</a>
 				</div>
 			</div>

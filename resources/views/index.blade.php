@@ -22,7 +22,7 @@
   
 		});
 	</script>
-	<link rel="stylesheet" href="css/publicacion.css">
+	<link rel="stylesheet" href="{{asset('css/publicacion.css')}}">
 	<!-- Slider -->
 	<link rel="stylesheet" href="js/jquery-ui-1.11.3/jquery-ui.css">
 	<script src="js/jquery-2.1.3.min.js"></script>

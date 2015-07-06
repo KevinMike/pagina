@@ -15,72 +15,10 @@ class MailController extends Controller {
 	 */
 	public function index()
 	{
-        return View('contacto');
+        $status = false;
+        return View('contacto',['status' => $status]);
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
     public function send(Request $request)
     {
         //guarda el valor de los campos enviados desde el form en un array
@@ -88,7 +26,6 @@ class MailController extends Controller {
         //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
         Mail::send('emails.mensaje', $data, function($message) use ($request)
         {
-            //die("hola soy goku");
             //remitente
             $message->from($request->email, $request->name);
             //asunto
@@ -96,7 +33,8 @@ class MailController extends Controller {
             //receptor
             $message->to(env('CONTACT_MAIL'), env('CONTACT_NAME'));
         });
-        return View('emails/exito');
+        $status = true;
+        return View('contacto')->with(['status' => $status]);
     }
 
 }

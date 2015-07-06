@@ -29,7 +29,7 @@
 	<div class="form-group">
 		{!! Form::label('email','Correo Electronico',array('class'=>"col-md-4 control-label")) !!}
 		<div class="col-md-6">
-		{!! Form::email('email',null,['class' => 'form-control','placeholder'=>'CORREO ELECTRÓNICO','required' => true,'maxlength' => '20']) !!}
+		{!! Form::email('email',null,['class' => 'form-control','placeholder'=>'CORREO ELECTRÓNICO','required' => true,'maxlength' => '50']) !!}
 		</div>
 	</div>
 	<div class="form-group">
@@ -58,4 +58,9 @@
 		</div>
 	</div>
 	{!! Form::close() !!}
+
+
+
+
+
 @stop

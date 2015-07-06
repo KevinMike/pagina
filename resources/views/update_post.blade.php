@@ -2,7 +2,13 @@
 @section('content')
 	  <!--Agregar enlaces a las publicaciones-->
 		<script type="text/javascript">
-			function agregar_enlace () {
+            $(function(){
+                $('#atras').click(function(){
+                    parent.history.back();
+                    return false;
+                });
+            });
+            function agregar_enlace () {
 				var link = document.getElementById("link").value;
 				var nombre = document.getElementById("nombre").value;
 				var cadena = "<a target='_blank' href='"+ link +"'>"+nombre+"</a>";
@@ -52,7 +58,8 @@
 			</div>
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
-				{!! Form::submit('Registrar Publicación',['class' => 'btn btn-primary']) !!}
+				    {!! Form::submit('Registrar Publicación',['class' => 'btn btn-primary']) !!}
+                    <input type="button" value="Atras" class="btn btn-warning" id="atras"/>
 				</div>
 			</div>
 		{!! Form::close() !!}

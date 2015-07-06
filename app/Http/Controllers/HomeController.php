@@ -33,6 +33,7 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
+    //Muestra la pagina de inicio del Panel de Control
 	public function index()
 	{
 		$post = Post::orderBy('id', 'DESC')->get();
@@ -40,6 +41,27 @@ class HomeController extends Controller {
 		$curso = Curso::all();
 		return view('home',['post'=>$post,'curso'=>$curso,'foto'=>$foto]);
 	}
+
+
+    //CURSOS
+
+    public function add_curso(Request $request)
+    {
+        $var = $request->input('fecha_inicio');
+        //$date = str_replace('/', '-', $var); remplaza los / por -
+        $date =  date('Y-m-d', strtotime($var));
+        $curso = new Curso;
+        $curso->nombre = $request->input('nombre');
+        $curso->descripcion = $request->input('descripcion');
+        $curso->frecuencia = $request->input('frecuencia');
+        $curso->horario = $request->input('horario');
+        $curso->fecha_inicio = $date;
+        $curso->costo = $request->input('costo');
+        $curso->duracion = $request->input('duracion');
+        $curso->save();
+        return Redirect::to('/home');
+    }
+            //Muestra el formulario de edición
 	public function r_update_curso(Request $request)
 	{
 		$curso = Curso::find($request->input('curso'));
@@ -48,11 +70,14 @@ class HomeController extends Controller {
 	public function update_curso(Request $request)
 	{
 		$curso = Curso::find($request->input('id'));
+        $var = $request->input('fecha_inicio');
+        //$date = str_replace('/', '-', $var); remplaza los / por -
+        $date =  date('Y-m-d', strtotime($var));
 		$curso->nombre = $request->input('nombre');
 		$curso->descripcion = $request->input('descripcion');
 		$curso->frecuencia = $request->input('frecuencia');
 		$curso->horario = $request->input('horario');
-		$curso->fecha_inicio = $request->input('fecha_inicio');
+		$curso->fecha_inicio = $date;
 		$curso->costo = $request->input('costo');
 		$curso->duracion = $request->input('duracion');
 		$curso->save();
@@ -64,6 +89,9 @@ class HomeController extends Controller {
 		Curso::find($id)->delete();
 		return Redirect::to('/home');
 	}
+
+
+    //PUBLICACIONES
 	public function add_post(Request $request)
 	{
 		$post = new Post;
@@ -79,6 +107,7 @@ class HomeController extends Controller {
 		Post::find($id)->delete();
 		return Redirect::to('/home');
 	}
+            //Muestra el formulario de edicion
 	public function r_update_post(Request $request)
 	{
 		$post = Post::find($request->input('post'));
@@ -87,7 +116,6 @@ class HomeController extends Controller {
 	public function update_post(Request $request)
 	{
 		$post = Post::find($request->input('id'));
-		//echo $request->input('id');
 		$post->titulo = $request->input('titulo');
 		$post->texto = $request->input('texto');
 		$post->save();

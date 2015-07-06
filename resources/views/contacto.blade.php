@@ -30,25 +30,50 @@
 			</div>
 		{!! Form::close() !!}
 
-        <!--
-        {!! Form::open(['route' => 'send', 'method' => 'post']) !!}
-        <div class="form-group">
-            {!! Form::label('email', 'E-Mail') !!}
-            {!! Form::email('email', null, ['class' => 'form-control','required' => true ]) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('subject', 'Asunto') !!}
-            {!! Form::text('subject', null, ['class' => 'form-control','required' => true ]) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('body', 'Mensaje') !!}
-            {!! Form::textarea('body', null, ['class' => 'form-control','required' => true ]) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}
-        </div>
-        {!! Form::close() !!}
--->
 
 
+
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Enhorabuena!!!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Su mensaje ha sido enviado, le responderemos en breve.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Siguiente</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @if($status)
+
+        <script>
+        $("#myModal").on("show", function() { // wire up the OK button to dismiss the modal when shown
+            $("#myModal a.btn").on("click", function(e) {
+                console.log("button pressed"); // just as an example...
+            $("#myModal").modal('hide'); // dismiss the dialog
+            });
+        });
+        $("#myModal").on("hide", function() { // remove the event listeners when the dialog is dismissed
+            $("#myModal a.btn").off("click");
+        });
+        $("#myModal").on("hidden", function() { // remove the actual elements from the DOM when fully hidden
+            $("#myModal").remove();
+        });
+        $("#myModal").modal({ // wire up the actual modal functionality and show the dialog
+            "backdrop" : "static",
+            "keyboard" : true,
+            "show" : true // ensure the modal is shown immediately
+        });
+        </script>
+        @endif
 	@endsection

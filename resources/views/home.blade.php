@@ -3,9 +3,27 @@
 @section('content')
   <!--Agregar enlaces a las publicaciones-->
 	<script>
-		  $(function() {
-		    $( "#datepicker" ).datepicker();
-		  });
+          $(function() {
+              $( "#tabs" ).tabs();
+              $( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+              if($('#select_post option').length < 1 )
+              {
+                  $("#actualizar_post").attr("disabled", "disabled");
+                  $("#eliminar_post").attr("disabled", "disabled");
+
+              }
+              if($('#select_curso option').length < 1 )
+              {
+                  $("#actualizar_curso").attr("disabled", "disabled");
+                  $("#eliminar_curso").attr("disabled", "disabled");
+
+              }
+              if($('#select_foto option').length < 1 )
+              {
+                  $("#eliminar_foto").attr("disabled", "disabled");
+
+              }
+          });
 		function agregar_enlace () {
 			var link = document.getElementById("link").value;
 			var nombre = document.getElementById("nombre").value;
@@ -19,18 +37,19 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Panel de Administración</div>
 
-				<div class="panel-body">
+				<div class="panel-body" id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">PUBLICACIONES</a></li>
+                        <li><a href="#tabs-2">CURSOS</a></li>
+                        <li><a href="#tabs-3">FOTOS</a></li>
+                        <li><a href="#tabs-4">PREINSCRIPCIONES</a></li>
+                    </ul>
 
-						<h1>PUBLICACIONES</h1>
 
-                    <script>
-                        $(function() {
-                            $( "#datepicker" ).datepicker();
-                        });
-                    </script>
-                    <p>Date: <input type="text" id="datepicker"></p>
+                    <div id="tabs-1">
 
-                    <h3>Insertar enlaces en los post</h3>
+                    <h1><b>PUBLICACIONES</b></h1>
+                    <h4><b>Insertar enlaces en los post</b></h4>
 						<form class="form-horizontal" role="form" >
 				        	<div class="form-group">
 					            <label class="col-md-4 control-label" for="link">Enlace: </label>
@@ -53,7 +72,7 @@
 			                </div>
 			            </form>
 
-						<h3>Registrar Publicaciones</h3>
+						<h4><b>Registrar Publicaciones</b></h4>
 
 						{!! Form::open(["url" => "/home/add_post",'class'=>"form-horizontal", 'role'=>"form"]) !!}
 							<div class="form-group">
@@ -75,12 +94,12 @@
 							</div>
 						{!! Form::close() !!}
 
-						<h3>Editar o Eliminar publicaciones</h3>
+						<h4><b>Editar o Eliminar publicaciones</b></h4>
 						{!! Form::open(array('class'=>"form-horizontal", 'role'=>"form")) !!}
 						<div class="form-group">
 							{!! Form::label('post','Titulo',array('class'=>"col-md-4 control-label")) !!}
 							<div class="col-md-6">
-								<select name="post" id="post" class="form-control">
+								<select name="post" id="select_post" class="form-control">
 								@foreach ($post as $item)
 									<option value="{{$item->id}}">{{$item->titulo}} - {{$item->updated_at}}</option>
 								@endforeach
@@ -89,15 +108,19 @@
 						</div>
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit('Actualizar',array("onClick" => "this.form.action = 'home/update2'",'class' => 'btn btn-success')) !!}
-								{!! Form::submit('Eliminar',array("onClick" => "this.form.action = 'home/delete_post'",'class' => 'btn btn-danger')) !!}
+								{!! Form::submit('Actualizar',array("onClick" => "this.form.action = 'home/update2'",'class' => 'btn btn-success','id'=>'actualizar_post')) !!}
+								{!! Form::submit('Eliminar',array("onClick" => "this.form.action = 'home/delete_post'",'class' => 'btn btn-danger','id'=>'eliminar_post')) !!}
 							</div>
 						</div>
 						{!! Form::close() !!}
 
-					    <h1>CURSOS</h1>
-					    <h3>Registrar Cursos</h3>
-					    {!!Form::open(array('url' => 'add_curso','class'=>"form-horizontal", 'role'=>"form")) !!}
+                    </div>
+
+                    <div id="tabs-2">
+
+					    <h1><b>CURSOS</b></h1>
+					    <h4><b>Registrar Cursos</b></h4>
+					    {!!Form::open(array('url' => 'home/add_curso','class'=>"form-horizontal", 'role'=>"form")) !!}
 							<div class="form-group">
 								{!! Form::label('nombre','Nombre del Curso',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
@@ -107,7 +130,7 @@
 							<div class="form-group">
 								{!! Form::label('descripcion','Descripción',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
-									{!! Form::text('descripcion',null,array('class'=>"form-control",)) !!}
+									{!! Form::textarea('descripcion',null,array('class'=>"form-control",)) !!}
 								</div>
 							</div>
 							<div class="form-group">
@@ -117,7 +140,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								{!! Form::label('horario','Hora',array('class'=>"col-md-4 control-label")) !!}
+								{!! Form::label('horario','Horas',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
 									{!! Form::text('horario',null,array('class'=>"form-control","maxlenght" => '100','required'=>true)) !!}
 								</div>
@@ -147,28 +170,32 @@
 							</div>
 					    {!!Form::close()!!}
 
-					    <h3>Editar y Eliminar Cursos</h3>
+					    <h4><b>Editar y Eliminar Cursos</b></h4>
 						{!! Form::open(array('class'=>"form-horizontal", 'role'=>"form")) !!}
 							<div class="form-group">
 								{!! Form::label('curso','Curso',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
-									<select name="curso" id="curso" class="form-control">
+									<select name="curso" id="select_curso" class="form-control">
 										@foreach($curso as $item)
-											<option value="{{$item->id}}">{{$item->nombre}}</option>
+											<option value="{{$item->id}}">{{$item->nombre}} - Inicio: {{date('d-m-Y', strtotime($item->fecha_inicio))}}, {{$item->frecuencia}}, {{$item->horario}}</option>
 										@endforeach
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-md-6 col-md-offset-4">
-									{!! Form::submit('Actualizar', array("onClick" => "this.form.action = 'home/update'",'class' => 'btn btn-success')) !!}
-									{!! Form::submit('Eliminar', array("onClick" => "this.form.action = 'home/delete_curso'",'class' => 'btn btn-danger')) !!}
+									{!! Form::submit('Actualizar', array("onClick" => "this.form.action = 'home/update'",'class' => 'btn btn-success','id'=>'actualizar_curso')) !!}
+									{!! Form::submit('Eliminar', array("onClick" => "this.form.action = 'home/delete_curso'",'class' => 'btn btn-danger','id'=>'eliminar_curso')) !!}
 								</div>
 							</div>
 						{!! Form::close() !!}
 
-						<h1>GALERIA DE FOTOS</h1>
-					   <h3>Subir fotos</h3>
+                    </div>
+
+                    <div id="tabs-3">
+
+                        <h1><b>GALERIA DE FOTOS</b></h1>
+					   <h4><b>Subir fotos</b></h4>
 
 						        @if($errors->has())
 						            <div class="alert-box alert">           
@@ -185,7 +212,7 @@
 						            </div>                    
 						        @endif
 						        
-	                    {!! Form::open(array('url' => 'upload', 'class'=>"form-horizontal", 'role'=>"form", 'files' => true)) !!}
+	                    {!! Form::open(array('url' => 'foto/guardar', 'class'=>"form-horizontal", 'role'=>"form", 'files' => true,'method'=>'POST')) !!}
 			                <div class="form-group">
 				                {!! Form::label('descripcion', 'Descripción',array('class'=>"col-md-4 control-label")) !!}
 				                <div class="col-md-6">
@@ -205,12 +232,12 @@
 							</div>
 		                {!! Form::close() !!}
 						
-			           	<h3>Eliminar Fotos</h3>	
-			           	{!! Form::open(array('url' => 'eliminar_foto', 'class'=>"form-horizontal", 'role'=>"form", 'files' => true)) !!}
+			           	<h4><b>Eliminar Fotos</b></h4>
+			           	{!! Form::open(array('url' => "foto/eliminar", 'class'=>"form-horizontal", 'role'=>"form", 'files' => true, 'method'=>"post")) !!}
 			              	<div class="form-group">
 								{!! Form::label('descripcion','Descripción',array('class'=>"col-md-4 control-label")) !!}
 								<div class="col-md-6">
-									<select name="descripcion" class="form-control">
+									<select id="select_foto" name="descripcion" class="form-control">
 										@foreach($foto as $item)
 											<option value="{{$item->id}}">{{$item->descripcion}}</option>
 										@endforeach
@@ -219,11 +246,18 @@
 							</div>
 				        	<div class="form-group">
 								<div class="col-md-6 col-md-offset-4">
-									{!! Form::submit('Eliminar', array("class" => "btn btn-danger")) !!}
+									{!! Form::submit('Eliminar', array("class" => "btn btn-danger",'id'=>'eliminar_foto')) !!}
 								</div>
 							</div>
 		                {!! Form::close() !!}
 
+                    </div>
+
+                    <div id="tabs-4">
+
+                        En construccion...
+
+                    </div>
 
 				</div>
 			</div>

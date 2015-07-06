@@ -4,20 +4,8 @@ blanco = rgb(254,254,254)
 celeste = rgb(14,116,175)
 negro_claro = rgb(38,38,38)
 @font-face {
-	font-family: 'open sans';
-	src:url('../fonts/open sans/OpenSans-Semibold.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Alegreya';
-	src:url('../fonts/Alegreya/Alegreya-Regular.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Amaranth';
-	src:url('../fonts/Amaranth/Amaranth-Regular.ttf');
+	font-family: 'Droid Sans Mono';
+	src:url('../fonts/Droid_Sans_Mono/DroidSansMono.ttf');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -86,7 +74,9 @@ body
 		#mapa:before
 			font-family "icomoon"
 			content "\e9ca    "
-/*	nav
+
+/*	Menu aopcional 
+	nav
 		background-color negro_claro
 		width 100%
 		overflow-x auto
@@ -129,6 +119,8 @@ body
 					background-color celeste
 					color white
 					text-decoration none*/
+					
+
 	section
 		border-top 0.5em solid negro_claro
 		background-color azul
@@ -137,7 +129,7 @@ body
 		width 100%
 		#principal
 			background-color gris_claro
-			font-family "open sans"
+			font-family "Droid Sans Mono"
 			font-size 1em
 			padding 1em
 			margin 0 0 1em 0
@@ -226,15 +218,3 @@ body
 			#principal, aside
 				display inline-block
 				vertical-align top
-
-		
-				
-/*@media screen and (max-width: 768px)
-	body
-		header
-			text-align center
-			.titulo
-				font-size 3em
-			.logo
-				#img1
-					margin-right 10px*/

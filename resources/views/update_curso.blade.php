@@ -1,5 +1,14 @@
 @extends('app')
 @section('content')
+        <script>
+            $(function() {
+                $( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+                $('#atras').click(function(){
+                    parent.history.back();
+                    return false;
+                });
+            });
+        </script>
 		<div class="container">
 			<h1>EDITAR CURSOS</h1>
 		    {!!Form::open(array('url' => '/home/update_curso','class'=>"form-horizontal", 'role'=>"form")) !!}
@@ -13,7 +22,7 @@
 			<div class="form-group">
 				{!! Form::label('descripcion','Descripción',array('class'=>"col-md-4 control-label")) !!}
 				<div class="col-md-6">
-					{!! Form::text('descripcion',$curso->descripcion,array('class'=>"form-control",'required'=>true)) !!}
+					{!! Form::textarea('descripcion',$curso->descripcion,array('class'=>"form-control",'required'=>true)) !!}
 				</div>
 			</div>
 			<div class="form-group">
@@ -23,7 +32,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				{!! Form::label('horario','Hora',array('class'=>"col-md-4 control-label")) !!}
+				{!! Form::label('horario','Horas',array('class'=>"col-md-4 control-label")) !!}
 				<div class="col-md-6">
 					{!! Form::text('horario',$curso->horario,array('class'=>"form-control",'required'=>true,'maxlength'=>100)) !!}
 				</div>
@@ -31,7 +40,7 @@
 			<div class="form-group">
 				{!! Form::label('fecha_inicio','Fecha de Inicio',array('class'=>"col-md-4 control-label")) !!}
 				<div class="col-md-6">
-					{!! Form::text('fecha_inicio',$curso->fecha_inicio,array('class'=>"form-control",'required'=>true)) !!}
+					{!! Form::text('fecha_inicio', date('d-m-Y', strtotime($curso->fecha_inicio)) ,array('class'=>"form-control",'required'=>true,'id'=>'datepicker')) !!}
 				</div>
 			</div>
 			<div class="form-group">
@@ -49,6 +58,7 @@
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
 					{!! Form::submit('Registrar Curso',['class' => 'btn btn-primary']) !!}
+                    <input type="button" value="Atras" class="btn btn-warning" id="atras"/>
 				</div>
 			</div>
 	    {!!Form::close()!!}

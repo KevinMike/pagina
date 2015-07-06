@@ -20,7 +20,7 @@ class CreatePreinscripcionTable extends Migration {
             $table->string('nombre',30);
             $table->string('apellido',30);
             $table->string('telefono',15);
-            $table->string('email',20);
+            $table->string('email',50);
             $table->string('interes',10);
             $table->timestamps();
         });
